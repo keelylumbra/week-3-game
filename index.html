@@ -43,15 +43,13 @@ document.onkeyup = function(event) {
 	// This sets the computer guess equal to the random.
 	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-	function reWriteStats(){
-		var tries = 10;
-	}
+	
 
 	// It tests to determine if the computer or the user won the round and then increments 
 	if (userGuess == computerGuess) {
 			wins++;
 			guesses[i]=="";
-			reWriteStats ();
+			
 			
 
 	}
@@ -67,8 +65,8 @@ document.onkeyup = function(event) {
 				if (tries=="0") {
 
 					losses++;
-					reWriteStats();
-					guesses[i]=="";
+					guesses.length=0;
+					tries = 10;
 
 				}
 
