@@ -1,0 +1,104 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Psychic Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+</head>
+<body>
+<div id="game">
+<h1>Guess what letter I'm thinking of</h1>
+
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+
+// Sets the computer choices 
+var computerChoices = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+// Declares the tallies to 0 
+var wins = 0;
+var losses = 0;
+var tries = 10;
+var guesses =[];
+
+// When the user presses the key it records the keypress and then sets it to userguess
+
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	// This sets the computer guess equal to the random.
+	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+	function reWriteStats(){
+		var tries = 10;
+	}
+
+	// It tests to determine if the computer or the user won the round and then increments 
+	if (userGuess == computerGuess) {
+			wins++;
+			guesses[i]=="";
+			reWriteStats ();
+			
+
+	}
+	else {
+		tries--;
+			for (var i=1; i<2; i++){
+				guesses.push(userGuess);
+
+				guesses[i];
+
+				}
+
+				if (tries=="0") {
+
+					losses++;
+					reWriteStats();
+					guesses[i]=="";
+
+				}
+
+	var html = "<p>Guess a letter</p>" +
+		"<p>wins: " + 
+		wins + 
+		"</p>" +
+		"<p>losses: " + 
+		losses + 
+		"</p>" +
+		"<p>tries: " + 
+		tries + 
+		"</p>" +
+		"<p>guesses: " +
+		guesses +
+		"</p>";
+
+		// Placing the html into the game ID
+		document.querySelector('#game').innerHTML = html;
+
+	}
+
+	
+
+	}
+
+
+
+
+</script>
+</body>
+
+</html>
