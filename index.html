@@ -48,7 +48,8 @@ document.onkeyup = function(event) {
 	// It tests to determine if the computer or the user won the round and then increments 
 	if (userGuess == computerGuess) {
 			wins++;
-			guesses[i]=="";
+			guesses.length=0;
+			tries = 10;
 			
 			
 
